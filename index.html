@@ -1,88 +1,152 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Kirin brings product events, sessions, and traces into one clear picture.">
-    <title>Kirin — Product signals, made clear</title>
+    <meta name="description" content="닥터빌 주간 월간 GA 데이터 자동 시트 저장 프로젝트의 집계 기준과 지표 정의서">
+    <title>닥터빌 GA4 정의서</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Funnel+Sans:wght@700;800&family=Inter:wght@400&family=Geist:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
   </head>
-  <body>
-    <main class="site-shell">
-      <section class="hero-zone" aria-labelledby="hero-title">
-        <header class="site-nav">
-          <a class="brand" href="#" aria-label="Kirin home">
-            <svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="m21 8-9-5-9 5 9 5 9-5Z"></path>
-              <path d="m3 8 9 5 9-5"></path>
-              <path d="m3 8v8l9 5 9-5V8"></path>
-            </svg>
-            <span>Kirin</span>
-          </a>
+  <body class="ga4-page">
+    <main class="ga4-document">
+      <header class="spec-hero">
+        <div class="spec-hero-inner">
+          <p class="spec-kicker">GA4 데이터 정의서</p>
+          <h1>닥터빌 주간 월간<br>ga데이터 자동 시트저장</h1>
+          <p class="spec-intro">구글 스크립트를 통해 작성되며 시트는 자동 업데이트됩니다.</p>
+          <div class="spec-facts" aria-label="프로젝트 요약">
+            <div><strong>자동</strong><span>시트 업데이트</span></div>
+            <div><strong>32</strong><span>페이지 그룹</span></div>
+            <div><strong>3</strong><span>전체 · PC · MO</span></div>
+            <div><strong>2</strong><span>주간 · 월간</span></div>
+          </div>
+        </div>
+      </header>
 
-          <nav class="nav-links" aria-label="Primary navigation">
-            <a href="#product">Product</a>
-            <a href="#solutions">Solutions</a>
-            <a href="#pricing">Pricing</a>
-            <a href="#docs">Docs</a>
-            <a href="#company">Company</a>
+      <div class="spec-layout">
+        <aside class="spec-toc" aria-label="목차">
+          <p>목차</p>
+          <nav>
+            <a href="#common"><span>01</span>공통 기준</a>
+            <a href="#period"><span>02</span>기간 정의</a>
+            <a href="#metrics"><span>03</span>핵심 지표</a>
+            <a href="#insight"><span>04</span>인사이트 판정</a>
+            <a href="#tabs"><span>05</span>탭별 설명</a>
+            <a href="#pages"><span>06</span>페이지 그룹</a>
+            <a href="#functions"><span>07</span>실행 함수</a>
+            <a href="#limits"><span>08</span>알려진 한계</a>
           </nav>
-
-          <div class="nav-actions">
-            <a class="sign-in" href="#signin">Sign in</a>
-            <a class="button button-small button-primary" href="#start">Start free</a>
+          <div class="toc-note">
+            <strong>급하게 최신 데이터가 필요할 때</strong>
+            <span>네 개의 동기화 함수를 실행합니다.</span>
           </div>
-        </header>
+        </aside>
 
-        <div class="hero-copy">
-          <div class="eyebrow">
-            <span class="eyebrow-mark" aria-hidden="true">◆</span>
-            <span>Kirin 3.0 — now with live signal maps</span>
-          </div>
+        <article class="spec-content">
+          <section class="spec-section" id="common">
+            <div class="section-heading"><span>01</span><div><h2>공통 기준</h2><p>모든 탭에 공통으로 적용되는 필터입니다.</p></div></div>
+            <div class="criteria-grid">
+              <article><em>INCLUDE</em><h3>로그인 조건</h3><p><code>사용자 ID로 로그인함 = Yes</code>인 트래픽만 집계</p></article>
+              <article><em>EXCLUDE</em><h3>내부 트래픽 제외</h3><p><code>테스트 데이터 필터 이름 = internal</code>인 트래픽 제외</p></article>
+              <article><em>INCLUDE</em><h3>대상 도메인</h3><p>호스트명에 <code>m.doc</code> 또는 <code>www</code> 포함. 닥터빌 모바일과 PC를 합산</p></article>
+              <article><em>PC ONLY</em><h3>페이지별 리포트</h3><p>PC만 집계하며 모바일 페이지별 리포트는 별도 구축하지 않음</p></article>
+            </div>
+            <div class="device-row">
+              <div><strong>전체</strong><span>기기 구분 없음</span></div>
+              <div><strong>PC</strong><span>PC</span></div>
+              <div><strong>MO</strong><span>PC 제외</span></div>
+            </div>
+          </section>
 
-          <h1 id="hero-title">Finally see what your product is really doing</h1>
-          <p class="hero-description">
-            Kirin turns scattered events, sessions and traces into one clear picture — so your team stops guessing and starts shipping the right thing.
-          </p>
+          <section class="spec-section" id="period">
+            <div class="section-heading"><span>02</span><div><h2>기간 정의</h2><p>항상 가장 최근에 완료된 기간만 집계합니다.</p></div></div>
+            <div class="period-grid">
+              <article><p class="card-label">주 (週)</p><h3>월요일 ~ 일요일</h3><p>7일 단위로 집계합니다.</p><div class="week-days"><span>월</span><span>화</span><span>수</span><span>목</span><span>금</span><span>토</span><span>일</span></div><small><code>2026-06-01</code> = 6/1(월)~6/7(일)</small></article>
+              <article><p class="card-label">월 (月)</p><h3>달력월 1일 ~ 말일</h3><p>달력월 전체를 집계합니다.</p><div class="month-line"><span>6/1</span><strong>2026-06</strong><span>6/30</span></div><small>첫 주와 마지막 주는 7일 미만일 수 있습니다.</small></article>
+            </div>
+            <div class="callout"><strong>백필 · 과거 데이터 채우기</strong><p><code>backfillFromJune</code> 실행 시 2026년 6월 1일부터 현재까지 완료된 모든 주와 월을 순차적으로 채웁니다.</p></div>
+          </section>
 
-          <div class="hero-actions">
-            <a class="button button-primary" href="#start">Start free — no card</a>
-            <a class="button button-secondary" href="#demo">
-              <span>Book a demo</span>
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M5 12h14"></path>
-                <path d="m13 6 6 6-6 6"></path>
-              </svg>
-            </a>
-          </div>
-        </div>
+          <section class="spec-section metric-section" id="metrics">
+            <div class="section-heading light"><span>03</span><div><h2>핵심 지표 정의</h2><p>기간에 따라 DAU·WAU·MAU 계산 방식이 다릅니다.</p></div></div>
+            <div class="accuracy-card"><h3>GA4 API 수집 데이터 안내</h3><p>GA4는 자체적으로 샘플링과 모델링을 적용하고, API의 “필터” 방식과 GA4 화면의 “세그먼트” 방식은 사용자 계산 시 미묘한 차이가 있어 완전한 오차 제로는 어렵습니다.</p><div><span><strong>0.1~0.3%</strong>활성사용자 · 조회수</span><span><strong>2~4%</strong>신규사용자 · 재방문자</span></div></div>
+            <div class="table-scroll dark-table"><table><thead><tr><th>리포트</th><th>DAU</th><th>WAU</th><th>MAU</th></tr></thead><tbody><tr><th>주간</th><td>7일간 일별 활성사용자수 평균</td><td>7일 전체 활성사용자수</td><td>주 종료일 기준 28일 롤링 활성사용자</td></tr><tr><th>월간</th><td>해당 달 일별 활성사용자수 평균</td><td>각 주(yearWeek) 활성사용자수 평균</td><td>해당 달 전체 활성사용자수</td></tr></tbody></table></div>
+            <div class="warning">주간 MAU(28일 롤링)와 월간 MAU(달력월 전체)는 계산 방식이 다르므로 직접 비교하지 않습니다.</div>
+          </section>
 
-        <div class="video-wrap" id="product">
-          <button class="video-player" type="button" aria-label="Play Kirin product video">
-            <span class="play-button" aria-hidden="true">
-              <svg viewBox="0 0 24 24">
-                <path d="m8 5 11 7-11 7V5Z"></path>
-              </svg>
-            </span>
-            <span class="caption-chip">2:14 — Kirin in a real sprint</span>
-          </button>
-        </div>
+          <section class="spec-section">
+            <div class="section-heading compact"><span>03 ·</span><div><h2>기타 지표</h2><p>주간·월간 리포트에서 산출되는 파생 지표입니다.</p></div></div>
+            <div class="metric-grid">
+              <article><span>공통</span><h3>조회수</h3><code>screenPageViews 합계</code></article>
+              <article><span>주간</span><h3>일별평균조회수(월~금)</h3><code>월~금 조회수 ÷ 5</code></article>
+              <article><span>공통</span><h3>사용자당조회수</h3><code>조회수 ÷ 활성사용자(또는 WAU)</code></article>
+              <article><span>공통</span><h3>평균세션시간</h3><code>averageSessionDuration (초)</code></article>
+              <article><span>월간</span><h3>신규 / 재방문자</h3><code>newUsers · 활성사용자 − 신규사용자</code></article>
+              <article><span>월간</span><h3>세션당평균참여시간</h3><code>userEngagementDuration ÷ sessions</code></article>
+              <article><span>월간</span><h3>활성사용자당참여세션수</h3><code>engagedSessions ÷ activeUsers</code></article>
+              <article><span>월간</span><h3>세션당조회수</h3><code>조회수 ÷ sessions</code></article>
+              <article><span>공통</span><h3>스티커니스</h3><code>DAU/WAU · DAU/MAU · WAU/MAU</code><small>높을수록 사용자가 자주 재방문</small></article>
+              <article><span>근사</span><h3>평균참여시간(페이지별)</h3><code>userEngagementDuration ÷ screenPageViews</code><small>페이지 단위 실측이 아닌 근사 추정값</small></article>
+              <article><span>근사</span><h3>이탈률(페이지별)</h3><code>GA4 bounceRate</code><small>페이지 포함 세션 기준이며 랜딩 페이지 기준과 다를 수 있음</small></article>
+              <article><span>페이지</span><h3>조회수 / 활성사용자 비중</h3><code>해당 페이지 ÷ 같은 기간 PC 전체 × 100</code><small>조회수와 활성사용자 각각 산출</small></article>
+            </div>
+          </section>
 
-        <div class="trust-strip">
-          <p>Trusted by product teams at</p>
-          <div class="company-logos" aria-label="Kirin customers">
-            <span>Northwind</span>
-            <span>Lumen</span>
-            <span>Basalt</span>
-            <span>Corvid</span>
-            <span>Fieldnote</span>
-            <span>Aperture</span>
-          </div>
-        </div>
-      </section>
+          <section class="spec-section" id="insight">
+            <div class="section-heading"><span>04</span><div><h2>인사이트 판정 기준</h2><p>증감률 ±5%를 기준으로 자동 판정합니다.</p></div></div>
+            <div class="judgement-grid"><article class="negative"><strong>주의 필요</strong><span>나쁜 방향으로 5% 이상</span></article><article><strong>안정적</strong><span>±5% 미만 변화</span></article><article class="positive"><strong>개선 / 성장</strong><span>좋은 방향으로 5% 이상</span></article></div>
+            <div class="note-grid"><p><strong>이탈률은 방향이 반대</strong>하락은 개선, 상승은 주의이며 나머지 지표는 상승을 개선으로 판단합니다.</p><p><strong>3주 / 3개월 연속 추세</strong>최근 세 개 기간 동안 한 번도 꺾이지 않고 계속 오르거나 내린 경우입니다.</p></div>
+          </section>
+
+          <section class="spec-section" id="tabs">
+            <div class="section-heading"><span>05</span><div><h2>탭별 상세 설명</h2><p>역할과 갱신 방식을 탭별로 설명합니다.</p></div></div>
+            <div class="tab-list">
+              <article class="red"><h3>🔴 인사이트</h3><p>모든 증감·추세·서술형 요약을 시간순으로 누적 기록합니다.</p><small>WoW/MoM · 기기 비중 · 페이지 TOP3 · 연속 추세</small></article>
+              <article class="yellow"><h3>🟡 월간요약 / 주간요약</h3><p>전체·PC·MO를 1행=1기간+1기기 구조로 표시하고 직전 기간과 비교합니다.</p><small>기간별 3행 구분선</small></article>
+              <article class="yellow"><h3>🟡 월간페이지요약 / 주간페이지요약</h3><p>기간×페이지 그룹별 지표와 우려 한 개, 긍정 한 개를 표시합니다.</p><small>조회수 · 활성사용자 · 평균참여시간 · 이탈률 비교 · 기간별 32행 구분선</small></article>
+              <article class="blue"><h3>🔵 주간지표 / 월간지표</h3><p>전체·PC·MO 원본 데이터를 누적 저장하며 다른 탭이 이 데이터를 참조합니다.</p><small>기간별 3행 구분선</small></article>
+              <article class="green"><h3>🟢 전체지표_추이_주간 / 전체지표_추이_월간</h3><p>최근 3주·3개월의 전체·PC·MO를 표와 차트로 시각화합니다.</p><small>매번 완전히 새로 생성</small></article>
+              <article class="purple"><h3>🟣 페이지별지표_주간 / 페이지별지표_월간</h3><p>32개 페이지 그룹별 PC 원본 데이터를 누적 저장합니다.</p><small>기간별 32행 구분선</small></article>
+              <article class="purple"><h3>🟣 페이지별추이_주간 / 페이지별추이_월간</h3><p>최근 3주·3개월의 32개 페이지를 표와 차트로 시각화합니다.</p><small>조회수 · 이탈률 · 조회수 비중 상위 8개</small></article>
+            </div>
+          </section>
+
+          <section class="spec-section" id="pages">
+            <div class="section-heading"><span>06</span><div><h2>페이지 그룹 정의</h2><p>총 32개 페이지 그룹을 집계합니다.</p></div></div>
+            <div class="table-scroll"><table class="page-table"><thead><tr><th>그룹명</th><th>매칭</th><th>경로</th></tr></thead><tbody>
+              <tr><td>메인</td><td>정확히</td><td><code>/main</code></td></tr><tr><td>라이브세미나 편성표</td><td>정확히</td><td><code>/seminar/main</code></td></tr><tr><td>라이브세미나 상세</td><td>정확히</td><td><code>/seminar/seminarDetail</code></td></tr><tr><td>VOD 다시보기 메인</td><td>정확히</td><td><code>/seminar/seminarVodReplayList</code></td></tr><tr><td>VOD 다시보기 상세</td><td>정확히</td><td><code>/seminar/seminarVodReplayDetail</code></td></tr><tr><td>아카데미 메인</td><td>정확히</td><td><code>/forum/main</code></td></tr>
+              <tr><td>아카데미-개원(opening)</td><td>시작</td><td><code>/forum/opening/</code></td></tr><tr><td>아카데미-초음파(ultsound)</td><td>시작</td><td><code>/forum/ultsound/</code></td></tr><tr><td>아카데미-법정의무교육(mst)</td><td>시작</td><td><code>/forum/mst/</code></td></tr><tr><td>아카데미-에스테틱(plasur)</td><td>시작</td><td><code>/forum/plasur/</code></td></tr><tr><td>아카데미-심부전(kshf)</td><td>시작</td><td><code>/forum/kshf/</code></td></tr><tr><td>아카데미-임상고혈압(clinicHp)</td><td>시작</td><td><code>/forum/clinichp/</code></td></tr>
+              <tr><td>드럭인포 메인</td><td>정확히</td><td><code>/druginfo/main</code></td></tr><tr><td>브랜드존 메인</td><td>정확히</td><td><code>/product/main</code></td></tr><tr><td>브랜드존 상세(퀴즈 포함)</td><td>정확히</td><td><code>/product/productView</code></td></tr><tr><td>알림</td><td>정확히</td><td><code>/my/noti/notiList</code></td></tr><tr><td>마이페이지홈</td><td>정확히</td><td><code>/my/main</code></td></tr><tr><td>포인트 이용내역</td><td>정확히</td><td><code>/my/point/pointUseHistoryList</code></td></tr><tr><td>포인트 적립안내</td><td>정확히</td><td><code>/my/point/pointGuide</code></td></tr><tr><td>1:1문의</td><td>정확히</td><td><code>/cscenter/personalFaqReg</code></td></tr><tr><td>공지사항</td><td>정확히</td><td><code>/cscenter/noticelist</code></td></tr><tr><td>출석</td><td>정확히</td><td><code>/event/attend</code></td></tr>
+              <tr><td>학회일정</td><td>정확히</td><td><code>/mjournal/societySchedule/main</code></td></tr><tr><td>해외학회스케치 메인</td><td>정확히</td><td><code>/mjournal/societyjourney/sketch/main</code></td></tr><tr><td>해외학회스케치 상세</td><td>시작</td><td><code>/mjournal/societyjourney/sketch/detail/</code></td></tr><tr><td>심사청구 메인</td><td>정확히</td><td><code>/prescribe/appealChargeIssue/main</code></td></tr><tr><td>심사청구 상세</td><td>시작</td><td><code>/prescribe/appealChargeIssue/view/</code></td></tr><tr><td>이벤트 메인</td><td>정확히</td><td><code>/event/main</code></td></tr><tr><td>설문 메인</td><td>정확히</td><td><code>/survey/main</code></td></tr><tr><td>CME매거진</td><td>정확히</td><td><code>/mjournal/scholarshipMagazine/main</code></td></tr><tr><td>포인트샵 메인</td><td>정확히</td><td><code>/entertainment/main</code></td></tr><tr><td>업투데이트</td><td>정확히</td><td><code>/mjournal/uptodate</code></td></tr>
+            </tbody></table></div>
+            <div class="callout warning-callout"><strong>퀴즈참여 참고</strong><p>브랜드존 상세 내부 팝업의 해시(#) 변경은 별도 페이지뷰로 잡히지 않아 브랜드존 상세 트래픽에 포함됩니다.</p></div>
+          </section>
+
+          <section class="spec-section" id="functions">
+            <div class="section-heading"><span>07</span><div><h2>실행 함수 목록</h2><p>평소에는 트리거가 자동 실행합니다.</p></div></div>
+            <div class="sync-guide">
+              <article><strong>평소</strong><p>매주 월요일과 매월 1일에 자동으로 최신 데이터가 입력되므로 별도로 작업할 필요가 없습니다.</p></article>
+              <article><strong>최신 데이터가 급할 때</strong><p><code>weeklyGA4Sync</code>, <code>monthlyGA4Sync</code>, <code>pageWeeklyGA4Sync</code>, <code>pageMonthlyGA4Sync</code>를 실행해 최근 완료된 한 개 기간을 채웁니다.</p></article>
+              <article><strong>여러 기간이 빠졌을 때</strong><p><code>backfillFromJune</code>을 실행합니다. 이미 존재하는 기간은 건너뛰므로 여러 번 실행해도 안전합니다.</p></article>
+            </div>
+            <div class="function-groups">
+              <article><h3>정기 동기화</h3><dl><dt>weeklyGA4Sync</dt><dd>최근 완료된 주 1개</dd><dt>monthlyGA4Sync</dt><dd>최근 완료된 달 1개</dd><dt>pageWeeklyGA4Sync</dt><dd>페이지별 주간</dd><dt>pageMonthlyGA4Sync</dt><dd>페이지별 월간</dd></dl></article>
+              <article><h3>백필</h3><dl><dt>backfillWeeklyGA4(fromMondayStr)</dt><dd>지정 월요일부터</dd><dt>backfillMonthlyGA4(fromYear, fromMonth)</dt><dd>지정 연·월부터</dd><dt>backfillPageWeeklyGA4</dt><dd>페이지별 주간</dd><dt>backfillPageMonthlyGA4</dt><dd>페이지별 월간</dd><dt>backfillFromJune</dt><dd>2026년 6월부터 일괄 실행</dd></dl></article>
+              <article><h3>재구성 · API 호출 없음</h3><dl><dt>generateInsights</dt><dd>인사이트·요약·전체지표 추이</dd><dt>generatePageInsights</dt><dd>페이지 인사이트·요약·추이</dd></dl></article>
+            </div>
+          </section>
+
+          <section class="spec-section" id="limits">
+            <div class="section-heading"><span>08</span><div><h2>알려진 한계</h2><p>해석 시 아래 사항을 함께 고려합니다.</p></div></div>
+            <ul class="limit-list"><li>페이지별 리포트는 <strong>PC만</strong> 집계하며 모바일 페이지별 리포트는 별도로 구축하지 않습니다.</li><li>이탈률과 페이지별 평균참여시간은 근사치이며 GA4 UI의 정밀한 페이지 단위 지표와 정확히 일치하지 않을 수 있습니다.</li><li>월간 WAU 계산 시 첫 주와 마지막 주가 다른 달과 겹쳐 7일 미만으로 집계될 수 있습니다.</li><li>신규사용자와 재방문자는 GA4 탐색 화면의 세그먼트 방식과 API 필터 방식 사이에 0.1~2% 수준의 미세한 오차가 있을 수 있습니다.</li></ul>
+          </section>
+        </article>
+      </div>
+
+      <footer class="spec-footer"><strong>닥터빌 주간 월간 ga데이터 자동 시트저장</strong><span>매주 월요일 · 매월 1일 자동 실행</span></footer>
     </main>
   </body>
 </html>
