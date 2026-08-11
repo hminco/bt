@@ -1,0 +1,1112 @@
+{
+  "version": "2.17",
+  "children": [
+    {
+      "type": "frame",
+      "id": "b7KULQ",
+      "x": 0,
+      "y": 0,
+      "name": "Landing Page",
+      "clip": true,
+      "width": 1440,
+      "fill": "$surface-primary",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "TOwmo",
+          "name": "Hero Zone",
+          "clip": true,
+          "width": "fill_container",
+          "fill": [
+            "$surface-inverse",
+            {
+              "type": "image",
+              "opacity": 0.28,
+              "enabled": true,
+              "url": "https://images.unsplash.com/photo-1602863222305-3d29341c6066?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODY0MTMxOTB8&ixlib=rb-4.1.0&q=80&w=1080",
+              "mode": "fill"
+            }
+          ],
+          "layout": "vertical",
+          "children": [
+            {
+              "type": "frame",
+              "id": "bqI0R",
+              "name": "Nav",
+              "width": "fill_container",
+              "padding": [
+                28,
+                88
+              ],
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "VC8ww",
+                  "name": "Brand",
+                  "gap": 10,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "MTMd9",
+                      "name": "Mark",
+                      "width": 22,
+                      "height": 22,
+                      "icon": "box",
+                      "library": "lucide",
+                      "fill": "$fg-inverse"
+                    },
+                    {
+                      "type": "text",
+                      "id": "O1NRQO",
+                      "name": "Wordmark",
+                      "fill": "$fg-inverse",
+                      "content": "Kirin",
+                      "fontFamily": "$font-heading",
+                      "fontSize": 19,
+                      "fontWeight": "700",
+                      "letterSpacing": -0.4
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "sZXls",
+                  "name": "Links",
+                  "gap": 34,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "qIbfz",
+                      "name": "Product",
+                      "fill": "#FFFFFFB8",
+                      "content": "Product",
+                      "fontFamily": "$font-caption",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "IdoqT",
+                      "name": "Solutions",
+                      "fill": "#FFFFFFB8",
+                      "content": "Solutions",
+                      "fontFamily": "$font-caption",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "Y2IINv",
+                      "name": "Pricing",
+                      "fill": "#FFFFFFB8",
+                      "content": "Pricing",
+                      "fontFamily": "$font-caption",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "vQ25K",
+                      "name": "Docs",
+                      "fill": "#FFFFFFB8",
+                      "content": "Docs",
+                      "fontFamily": "$font-caption",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "yATT4",
+                      "name": "Company",
+                      "fill": "#FFFFFFB8",
+                      "content": "Company",
+                      "fontFamily": "$font-caption",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "cDoja",
+                  "name": "Nav Actions",
+                  "gap": 14,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "IJh4J",
+                      "name": "Sign in",
+                      "fill": "#FFFFFFB8",
+                      "content": "Sign in",
+                      "fontFamily": "$font-caption",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "FimGm",
+                      "name": "Nav CTA",
+                      "fill": "$accent-primary",
+                      "cornerRadius": "$radius-sm",
+                      "padding": [
+                        9,
+                        16
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "cywib",
+                          "name": "Label",
+                          "fill": "#0A0A0A",
+                          "content": "Start free",
+                          "fontFamily": "$font-caption",
+                          "fontSize": 14,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "qOY4V",
+              "name": "Hero Copy",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 22,
+              "padding": [
+                72,
+                320,
+                44,
+                320
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "RQiCQ",
+                  "name": "Eyebrow",
+                  "fill": "#FFFFFF14",
+                  "cornerRadius": "$radius-sm",
+                  "gap": 8,
+                  "padding": [
+                    6,
+                    14
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "SJdBk",
+                      "name": "Dot",
+                      "fill": "$accent-primary",
+                      "content": "◆",
+                      "fontFamily": "$font-caption",
+                      "fontSize": 9,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "JLbMY",
+                      "name": "Text",
+                      "fill": "#FFFFFFCC",
+                      "content": "Kirin 3.0 — now with live signal maps",
+                      "fontFamily": "$font-caption",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "QoMPr",
+                  "name": "Headline",
+                  "fill": "$fg-inverse",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Finally see what your product is really doing",
+                  "lineHeight": 1.06,
+                  "textAlign": "center",
+                  "fontFamily": "$font-heading",
+                  "fontSize": 66,
+                  "fontWeight": "800",
+                  "letterSpacing": -2
+                },
+                {
+                  "type": "frame",
+                  "id": "m0ecOu",
+                  "name": "Sub Wrap",
+                  "width": 620,
+                  "justifyContent": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "QRIrz",
+                      "name": "Subtext",
+                      "fill": "#FFFFFFB0",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Kirin turns scattered events, sessions and traces into one clear picture — so your team stops guessing and starts shipping the right thing.",
+                      "lineHeight": 1.6,
+                      "textAlign": "center",
+                      "fontFamily": "$font-body",
+                      "fontSize": 17,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "wCIfz",
+                  "name": "Hero Actions",
+                  "gap": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "LScex",
+                      "name": "Primary CTA",
+                      "fill": "$accent-primary",
+                      "cornerRadius": "$radius-sm",
+                      "padding": [
+                        14,
+                        26
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "NEydp",
+                          "name": "Label",
+                          "fill": "#0A0A0A",
+                          "content": "Start free — no card",
+                          "fontFamily": "$font-caption",
+                          "fontSize": 15,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "szWQk",
+                      "name": "Secondary CTA",
+                      "cornerRadius": "$radius-sm",
+                      "stroke": "#FFFFFF33",
+                      "strokeWidth": 1,
+                      "gap": 8,
+                      "padding": [
+                        14,
+                        24
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "sXOpx",
+                          "name": "Label",
+                          "fill": "$fg-inverse",
+                          "content": "Book a demo",
+                          "fontFamily": "$font-caption",
+                          "fontSize": 15,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "icon",
+                          "id": "c0SvH",
+                          "name": "Arrow",
+                          "width": 15,
+                          "height": 15,
+                          "icon": "arrow-right",
+                          "library": "lucide",
+                          "fill": "$fg-inverse"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "zh6y3",
+              "name": "Video Wrap",
+              "width": "fill_container",
+              "padding": [
+                0,
+                120
+              ],
+              "justifyContent": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "EmEF9",
+                  "name": "Video Player",
+                  "metadata": {
+                    "type": "unsplash",
+                    "username": "alvarordesign",
+                    "link": "https://unsplash.com/@alvarordesign",
+                    "author": "Alvaro Reyes"
+                  },
+                  "clip": true,
+                  "width": "fill_container",
+                  "height": 560,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "https://images.unsplash.com/photo-1514996937319-344454492b37?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODY0MTMyMTV8&ixlib=rb-4.1.0&q=80&w=1080",
+                    "mode": "fill"
+                  },
+                  "cornerRadius": "$radius-lg",
+                  "stroke": "#FFFFFF1F",
+                  "strokeWidth": 1,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "byx0U",
+                      "name": "Play Button",
+                      "width": 76,
+                      "height": 76,
+                      "fill": "#FFFFFFEB",
+                      "cornerRadius": 38,
+                      "effect": {
+                        "type": "shadow",
+                        "shadowType": "outer",
+                        "color": "#00000033",
+                        "offset": {
+                          "x": 0,
+                          "y": 2
+                        },
+                        "blur": 16
+                      },
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon",
+                          "id": "C4mTo",
+                          "name": "Play",
+                          "width": 26,
+                          "height": 26,
+                          "icon": "play",
+                          "library": "lucide",
+                          "fill": "#0A0A0A"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "JWQ7p",
+                      "layoutPosition": "absolute",
+                      "x": 20,
+                      "y": 500,
+                      "name": "Caption Chip",
+                      "fill": "#0A0A0ACC",
+                      "cornerRadius": "$radius-sm",
+                      "padding": [
+                        7,
+                        13
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "XhnNz",
+                          "name": "Caption",
+                          "fill": "#FFFFFFCC",
+                          "content": "2:14 — Kirin in a real sprint",
+                          "fontFamily": "$font-caption",
+                          "fontSize": 12,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "ABqhJ",
+              "name": "Trust Strip",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 22,
+              "padding": [
+                54,
+                120,
+                80,
+                120
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "verzO",
+                  "name": "Trust Label",
+                  "fill": "#FFFFFF80",
+                  "content": "TRUSTED BY PRODUCT TEAMS AT",
+                  "fontFamily": "$font-caption",
+                  "fontSize": 11,
+                  "fontWeight": "normal",
+                  "letterSpacing": 1.6
+                },
+                {
+                  "type": "frame",
+                  "id": "VeqLr",
+                  "name": "Logos",
+                  "gap": 56,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "RLrUx",
+                      "name": "Northwind",
+                      "fill": "#FFFFFF6B",
+                      "content": "Northwind",
+                      "fontFamily": "$font-heading",
+                      "fontSize": 19,
+                      "fontWeight": "700",
+                      "letterSpacing": -0.4
+                    },
+                    {
+                      "type": "text",
+                      "id": "NgTVO",
+                      "name": "Lumen",
+                      "fill": "#FFFFFF6B",
+                      "content": "Lumen",
+                      "fontFamily": "$font-heading",
+                      "fontSize": 19,
+                      "fontWeight": "700",
+                      "letterSpacing": -0.4
+                    },
+                    {
+                      "type": "text",
+                      "id": "e4StC",
+                      "name": "Basalt",
+                      "fill": "#FFFFFF6B",
+                      "content": "Basalt",
+                      "fontFamily": "$font-heading",
+                      "fontSize": 19,
+                      "fontWeight": "700",
+                      "letterSpacing": -0.4
+                    },
+                    {
+                      "type": "text",
+                      "id": "l09F4",
+                      "name": "Corvid",
+                      "fill": "#FFFFFF6B",
+                      "content": "Corvid",
+                      "fontFamily": "$font-heading",
+                      "fontSize": 19,
+                      "fontWeight": "700",
+                      "letterSpacing": -0.4
+                    },
+                    {
+                      "type": "text",
+                      "id": "B18qhX",
+                      "name": "Fieldnote",
+                      "fill": "#FFFFFF6B",
+                      "content": "Fieldnote",
+                      "fontFamily": "$font-heading",
+                      "fontSize": 19,
+                      "fontWeight": "700",
+                      "letterSpacing": -0.4
+                    },
+                    {
+                      "type": "text",
+                      "id": "x3ulm",
+                      "name": "Aperture",
+                      "fill": "#FFFFFF6B",
+                      "content": "Aperture",
+                      "fontFamily": "$font-heading",
+                      "fontSize": 19,
+                      "fontWeight": "700",
+                      "letterSpacing": -0.4
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "themes": {
+    "Mode": [
+      "Light",
+      "Dark"
+    ]
+  },
+  "variables": {
+    "--sidebar": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#E7E8E5"
+        },
+        {
+          "value": "#18181b",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--sidebar-foreground": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#666666"
+        },
+        {
+          "value": "#fafafa",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--sidebar-primary": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#18181b"
+        },
+        {
+          "value": "#18181b",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--sidebar-primary-foreground": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#fafafa"
+        },
+        {
+          "value": "#fafafa",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--sidebar-border": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#CBCCC9"
+        },
+        {
+          "value": "#ffffff1a",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--sidebar-accent": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#CBCCC9"
+        },
+        {
+          "value": "#2a2a30",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--sidebar-accent-foreground": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#18181b"
+        },
+        {
+          "value": "#fafafa",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--sidebar-ring": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#71717a"
+        },
+        {
+          "value": "#71717a",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--background": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#F2F3F0"
+        },
+        {
+          "value": "#111111",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--foreground": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#111111"
+        },
+        {
+          "value": "#FFFFFF",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--card": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#FFFFFF"
+        },
+        {
+          "value": "#1A1A1A",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--card-foreground": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#111111"
+        },
+        {
+          "value": "#FFFFFF",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--popover": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#FFFFFF"
+        },
+        {
+          "value": "#1A1A1A",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--popover-foreground": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#111111"
+        },
+        {
+          "value": "#FFFFFF",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--primary": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#FF8400"
+        },
+        {
+          "value": "#FF8400",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--primary-foreground": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#111111"
+        },
+        {
+          "value": "#111111",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--secondary": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#E7E8E5"
+        },
+        {
+          "value": "#2E2E2E",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--secondary-foreground": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#111111"
+        },
+        {
+          "value": "#FFFFFF",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--muted": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#F2F3F0"
+        },
+        {
+          "value": "#2E2E2E",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--muted-foreground": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#666666"
+        },
+        {
+          "value": "#B8B9B6",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--accent": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#F2F3F0"
+        },
+        {
+          "value": "#111111",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--accent-foreground": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#111111"
+        },
+        {
+          "value": "#F2F3F0",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--destructive": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#D93C15"
+        },
+        {
+          "value": "#FF5C33",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--border": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#CBCCC9"
+        },
+        {
+          "value": "#2E2E2E",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--input": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#CBCCC9"
+        },
+        {
+          "value": "#2E2E2E",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--ring": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#666666"
+        },
+        {
+          "value": "#666666",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--white": {
+      "type": "color",
+      "value": "#FFFFFF"
+    },
+    "--black": {
+      "type": "color",
+      "value": "#000000"
+    },
+    "--font-primary": {
+      "type": "string",
+      "value": "JetBrains Mono"
+    },
+    "--font-secondary": {
+      "type": "string",
+      "value": "Geist"
+    },
+    "--radius-none": {
+      "type": "number",
+      "value": 0
+    },
+    "--radius-pill": {
+      "type": "number",
+      "value": 999
+    },
+    "--color-success": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#DFE6E1"
+        },
+        {
+          "value": "#222924",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--color-success-foreground": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#004D1A"
+        },
+        {
+          "value": "#B6FFCE",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--color-warning": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#E9E3D8"
+        },
+        {
+          "value": "#291C0F",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--color-warning-foreground": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#804200"
+        },
+        {
+          "value": "#FF8400",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--color-error": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#E5DCDA"
+        },
+        {
+          "value": "#24100B",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--color-error-foreground": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#8C1C00"
+        },
+        {
+          "value": "#FF5C33",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--color-info": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#DFDFE6"
+        },
+        {
+          "value": "#222229",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--color-info-foreground": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#000066"
+        },
+        {
+          "value": "#B2B2FF",
+          "theme": {
+            "Mode": "Dark"
+          }
+        }
+      ]
+    },
+    "--radius-m": {
+      "type": "number",
+      "value": 16
+    },
+    "surface-primary": {
+      "type": "color",
+      "value": "#FFFFFF"
+    },
+    "surface-secondary": {
+      "type": "color",
+      "value": "#F7F8FA"
+    },
+    "surface-tertiary": {
+      "type": "color",
+      "value": "#EEF0F2"
+    },
+    "surface-inverse": {
+      "type": "color",
+      "value": "#0A0A0A"
+    },
+    "fg-primary": {
+      "type": "color",
+      "value": "#1A1A1A"
+    },
+    "fg-secondary": {
+      "type": "color",
+      "value": "#666666"
+    },
+    "fg-inverse": {
+      "type": "color",
+      "value": "#FFFFFF"
+    },
+    "border-subtle": {
+      "type": "color",
+      "value": "#EEF0F2"
+    },
+    "accent-primary": {
+      "type": "color",
+      "value": "#4A9FD8"
+    },
+    "font-heading": {
+      "type": "string",
+      "value": "Funnel Sans"
+    },
+    "font-body": {
+      "type": "string",
+      "value": "Inter"
+    },
+    "font-caption": {
+      "type": "string",
+      "value": "Geist"
+    },
+    "radius-sm": {
+      "type": "number",
+      "value": 4
+    },
+    "radius-lg": {
+      "type": "number",
+      "value": 8
+    }
+  },
+  "fileToken": "43c4c7d3-dc67-4c01-a231-3e212f3d031d"
+}
