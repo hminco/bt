@@ -8,44 +8,52 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Funnel+Sans:wght@700;800&family=Inter:wght@400&family=Geist:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/seminar-lab.css">
   </head>
   <body class="ga4-page">
     <main class="ga4-document">
-      <header class="spec-hero">
-        <div class="spec-hero-inner">
-          <p class="spec-kicker">GA4 데이터 정의서</p>
-          <h1>닥터빌 주간 월간<br>ga데이터 자동 시트저장</h1>
-          <p class="spec-intro">구글 스크립트를 통해 작성되며 시트는 자동 업데이트됩니다.</p>
-          <div class="spec-facts" aria-label="프로젝트 요약">
-            <div><strong>자동</strong><span>시트 업데이트</span></div>
-            <div><strong>32</strong><span>페이지 그룹</span></div>
-            <div><strong>3</strong><span>전체 · PC · MO</span></div>
-            <div><strong>2</strong><span>주간 · 월간</span></div>
-          </div>
-        </div>
-      </header>
-
       <div class="spec-layout">
-        <aside class="spec-toc" aria-label="목차">
-          <p>목차</p>
-          <nav>
-            <a href="#common"><span>01</span>공통 기준</a>
-            <a href="#period"><span>02</span>기간 정의</a>
-            <a href="#metrics"><span>03</span>핵심 지표</a>
-            <a href="#insight"><span>04</span>인사이트 판정</a>
-            <a href="#tabs"><span>05</span>탭별 설명</a>
-            <a href="#pages"><span>06</span>페이지 그룹</a>
-            <a href="#functions"><span>07</span>실행 함수</a>
-            <a href="#limits"><span>08</span>알려진 한계</a>
+        <aside class="spec-toc" aria-label="화면 메뉴">
+          <a class="sidebar-brand" href="#/definition">닥터빌 <strong>GA4</strong></a>
+          <p>메뉴</p>
+          <nav class="route-nav" aria-label="주요 화면">
+            <a href="#/definition" data-route-link="definition"><span>01</span>GA4 정의서</a>
+            <a href="#/weekly-pages" data-route-link="weekly-pages"><span>02</span>주간 페이지별 리포트</a>
+            <a href="#/ai-seminar-lab" data-route-link="ai-seminar-lab"><span>03</span>의료 세미나 AI Lab</a>
           </nav>
-          <div class="toc-note">
-            <strong>급하게 최신 데이터가 필요할 때</strong>
-            <span>네 개의 동기화 함수를 실행합니다.</span>
+          <div class="definition-nav" data-definition-nav>
+            <p>정의서 목차</p>
+            <nav class="section-nav" aria-label="정의서 목차">
+              <a href="#/definition/common"><span>01</span>공통 기준</a>
+              <a href="#/definition/period"><span>02</span>기간 정의</a>
+              <a href="#/definition/metrics"><span>03</span>핵심 지표</a>
+              <a href="#/definition/insight"><span>04</span>인사이트 판정</a>
+              <a href="#/definition/tabs"><span>05</span>탭별 설명</a>
+              <a href="#/definition/pages"><span>06</span>페이지 그룹</a>
+              <a href="#/definition/functions"><span>07</span>실행 함수</a>
+              <a href="#/definition/limits"><span>08</span>알려진 한계</a>
+            </nav>
           </div>
+          <div class="toc-note" data-definition-nav><strong>최신 데이터가 필요할 때</strong><span>네 개의 동기화 함수를 실행합니다.</span></div>
         </aside>
 
         <article class="spec-content">
+          <div class="route-view definition-view" data-view="definition">
+          <header class="spec-hero">
+            <div class="spec-hero-inner">
+              <p class="spec-kicker">GA4 데이터 정의서</p>
+              <h1>닥터빌 주간 월간<br>GA4 Data</h1>
+              <p class="spec-intro">구글 스크립트를 통해 작성되며 시트는 자동 업데이트됩니다.</p>
+              <div class="spec-facts" aria-label="프로젝트 요약">
+                <div><strong>자동</strong><span>시트 업데이트</span></div>
+                <div><strong>32</strong><span>페이지 그룹</span></div>
+                <div><strong>3</strong><span>전체 · PC · MO</span></div>
+                <div><strong>2</strong><span>주간 · 월간</span></div>
+              </div>
+            </div>
+          </header>
+
           <section class="spec-section" id="common">
             <div class="section-heading"><span>01</span><div><h2>공통 기준</h2><p>모든 탭에 공통으로 적용되는 필터입니다.</p></div></div>
             <div class="criteria-grid">
@@ -116,7 +124,7 @@
 
           <section class="spec-section" id="pages">
             <div class="section-heading"><span>06</span><div><h2>페이지 그룹 정의</h2><p>총 32개 페이지 그룹을 집계합니다.</p></div></div>
-            <div class="table-scroll"><table class="page-table"><thead><tr><th>그룹명</th><th>매칭</th><th>경로</th></tr></thead><tbody>
+            <div class="table-scroll page-grid-scroll"><table class="page-table"><thead><tr><th>그룹명</th><th>매칭</th><th>경로</th></tr></thead><tbody>
               <tr><td>메인</td><td>정확히</td><td><code>/main</code></td></tr><tr><td>라이브세미나 편성표</td><td>정확히</td><td><code>/seminar/main</code></td></tr><tr><td>라이브세미나 상세</td><td>정확히</td><td><code>/seminar/seminarDetail</code></td></tr><tr><td>VOD 다시보기 메인</td><td>정확히</td><td><code>/seminar/seminarVodReplayList</code></td></tr><tr><td>VOD 다시보기 상세</td><td>정확히</td><td><code>/seminar/seminarVodReplayDetail</code></td></tr><tr><td>아카데미 메인</td><td>정확히</td><td><code>/forum/main</code></td></tr>
               <tr><td>아카데미-개원(opening)</td><td>시작</td><td><code>/forum/opening/</code></td></tr><tr><td>아카데미-초음파(ultsound)</td><td>시작</td><td><code>/forum/ultsound/</code></td></tr><tr><td>아카데미-법정의무교육(mst)</td><td>시작</td><td><code>/forum/mst/</code></td></tr><tr><td>아카데미-에스테틱(plasur)</td><td>시작</td><td><code>/forum/plasur/</code></td></tr><tr><td>아카데미-심부전(kshf)</td><td>시작</td><td><code>/forum/kshf/</code></td></tr><tr><td>아카데미-임상고혈압(clinicHp)</td><td>시작</td><td><code>/forum/clinichp/</code></td></tr>
               <tr><td>드럭인포 메인</td><td>정확히</td><td><code>/druginfo/main</code></td></tr><tr><td>브랜드존 메인</td><td>정확히</td><td><code>/product/main</code></td></tr><tr><td>브랜드존 상세(퀴즈 포함)</td><td>정확히</td><td><code>/product/productView</code></td></tr><tr><td>알림</td><td>정확히</td><td><code>/my/noti/notiList</code></td></tr><tr><td>마이페이지홈</td><td>정확히</td><td><code>/my/main</code></td></tr><tr><td>포인트 이용내역</td><td>정확히</td><td><code>/my/point/pointUseHistoryList</code></td></tr><tr><td>포인트 적립안내</td><td>정확히</td><td><code>/my/point/pointGuide</code></td></tr><tr><td>1:1문의</td><td>정확히</td><td><code>/cscenter/personalFaqReg</code></td></tr><tr><td>공지사항</td><td>정확히</td><td><code>/cscenter/noticelist</code></td></tr><tr><td>출석</td><td>정확히</td><td><code>/event/attend</code></td></tr>
@@ -143,10 +151,162 @@
             <div class="section-heading"><span>08</span><div><h2>알려진 한계</h2><p>해석 시 아래 사항을 함께 고려합니다.</p></div></div>
             <ul class="limit-list"><li>페이지별 리포트는 <strong>PC만</strong> 집계하며 모바일 페이지별 리포트는 별도로 구축하지 않습니다.</li><li>이탈률과 페이지별 평균참여시간은 근사치이며 GA4 UI의 정밀한 페이지 단위 지표와 정확히 일치하지 않을 수 있습니다.</li><li>월간 WAU 계산 시 첫 주와 마지막 주가 다른 달과 겹쳐 7일 미만으로 집계될 수 있습니다.</li><li>신규사용자와 재방문자는 GA4 탐색 화면의 세그먼트 방식과 API 필터 방식 사이에 0.1~2% 수준의 미세한 오차가 있을 수 있습니다.</li></ul>
           </section>
+          </div>
+
+          <section class="route-view weekly-report-view" data-view="weekly-pages" hidden aria-labelledby="weekly-report-title">
+            <header class="report-header">
+              <div class="report-header-top">
+                <div>
+                  <p class="report-breadcrumb">닥터빌 GA4 <span>/</span> 페이지별지표_주간</p>
+                  <h1 id="weekly-report-title">주간 페이지별 리포트</h1>
+                </div>
+                <div class="period-controls" aria-label="조회 기간 이동">
+                  <button id="previous-period" type="button" aria-label="이전 주">‹</button>
+                  <span id="current-period">기간 불러오는 중</span>
+                  <button id="next-period" type="button" aria-label="다음 주">›</button>
+                  <strong>PC</strong>
+                </div>
+              </div>
+              <div class="report-kpis" aria-label="선택 기간 요약">
+                <article><span>집계 페이지 조회수</span><div><strong id="kpi-views">—</strong><em id="kpi-views-change">—</em></div></article>
+                <article><span>TOP 5 조회수 비중</span><div><strong id="kpi-top5-share">—</strong><em>PC 전체 대비</em></div></article>
+                <article><span>조회수 1위 페이지</span><div><strong id="kpi-top-page">—</strong><em id="kpi-top-page-views">—</em></div></article>
+                <article><span>기타 페이지 비중</span><div><strong id="kpi-other-share">—</strong><em>32개 그룹 외</em></div></article>
+                <article><span>집계 페이지그룹</span><div><strong id="kpi-group-count">—</strong><em>개</em></div></article>
+              </div>
+            </header>
+
+            <div class="report-body">
+              <div class="report-bento">
+                <article class="report-card views-card">
+                  <div class="report-card-heading"><div><h2>페이지별 조회수 TOP 8</h2><p id="views-chart-period">—</p></div><span>조회수</span></div>
+                  <div class="horizontal-bars" id="views-bars" aria-label="조회수 상위 8개 막대그래프"></div>
+                </article>
+
+                <div class="report-side-column">
+                  <article class="report-card share-card">
+                    <div class="report-card-heading"><div><h2>조회수 비중</h2><p>전체 PC 조회수 대비</p></div></div>
+                    <div class="donut-layout"><div class="donut" id="share-donut"><div><strong id="donut-value">—</strong><span>TOP 5 합계</span></div></div><div class="donut-legend" id="share-legend"></div></div>
+                  </article>
+                  <article class="report-card bounce-card">
+                    <div class="report-card-heading"><div><h2>이탈률 TOP 3</h2><p>선택 기간 페이지그룹 기준</p></div><span class="warning-tag">주의</span></div>
+                    <div class="bounce-bars" id="bounce-bars"></div>
+                  </article>
+                </div>
+              </div>
+
+              <article class="report-card trend-card">
+                <div class="report-card-heading"><div><h2>8주 집계 조회수 추이</h2><p>32개 페이지그룹의 주간 조회수 합계</p></div><span>추이</span></div>
+                <div class="trend-chart" id="views-trend" role="group" aria-label="8주 집계 조회수 선 그래프"></div>
+              </article>
+
+              <article class="report-card detail-card">
+                <div class="report-card-heading"><div><h2>페이지별 상세 지표</h2><p>선택 기간 조회수 상위 8개</p></div><span>PC 기준</span></div>
+                <div class="report-notice" id="report-notice" hidden></div>
+                <div class="report-table-scroll">
+                  <table class="report-table">
+                    <thead><tr><th>페이지그룹</th><th>활성사용자</th><th>조회수</th><th>조회수 비중</th><th>사용자당 조회수</th><th>평균참여시간</th><th>이탈률</th><th>전주 대비 인사이트</th></tr></thead>
+                    <tbody id="report-table-body"></tbody>
+                  </table>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section class="route-view seminar-lab-view" data-view="ai-seminar-lab" hidden aria-labelledby="seminar-lab-title">
+            <header class="lab-header">
+              <div>
+                <p class="lab-eyebrow">Internal Prototype · Backend Connected</p>
+                <h1 id="seminar-lab-title">Medical Seminar AI Lab</h1>
+                <p>긴 의료 세미나를 Clinical Brief로 변환하는 실험 환경</p>
+              </div>
+              <span class="lab-mode-badge">FastAPI · OpenAI STT</span>
+            </header>
+
+            <div class="lab-workspace">
+              <section class="lab-panel lab-input-panel" aria-labelledby="seminar-url-title">
+                <div class="lab-panel-heading">
+                  <div><span>INPUT</span><h2 id="seminar-url-title">YouTube Seminar URL</h2></div>
+                  <small>FastAPI metadata 조회</small>
+                </div>
+                <form class="lab-url-form" id="seminar-url-form">
+                  <label for="seminar-url">YouTube URL</label>
+                  <div>
+                    <input id="seminar-url" name="seminarUrl" type="url" value="https://www.youtube.com/watch?v=YsFmWWHc6Yc" autocomplete="url" required>
+                    <button type="submit">Load Seminar</button>
+                  </div>
+                  <p id="seminar-load-message" aria-live="polite">FastAPI 서버 연결을 준비하고 있습니다.</p>
+                </form>
+              </section>
+
+              <section class="lab-panel lab-metadata-panel" aria-labelledby="seminar-metadata-title">
+                <div class="lab-panel-heading">
+                  <div><span>SEMINAR</span><h2 id="seminar-metadata-title">Seminar Metadata</h2></div>
+                  <small>Mock fixture</small>
+                </div>
+                <dl class="lab-metadata-grid">
+                  <div><dt>Title</dt><dd data-seminar-meta="title">—</dd></div>
+                  <div><dt>Speaker</dt><dd data-seminar-meta="speaker">—</dd></div>
+                  <div><dt>Specialty</dt><dd data-seminar-meta="specialty">—</dd></div>
+                  <div><dt>Source</dt><dd data-seminar-meta="source">—</dd></div>
+                  <div><dt>Video ID</dt><dd data-seminar-meta="videoId">—</dd></div>
+                  <div><dt>Duration</dt><dd data-seminar-meta="duration">—</dd></div>
+                  <div><dt>Seminar Date</dt><dd data-seminar-meta="seminarDate">—</dd></div>
+                  <div><dt>Language</dt><dd data-seminar-meta="language">—</dd></div>
+                </dl>
+              </section>
+
+              <div class="lab-pipeline-layout">
+                <section class="lab-panel lab-pipeline-panel" aria-labelledby="pipeline-dashboard-title">
+                  <div class="lab-panel-heading lab-pipeline-heading">
+                    <div><span>PIPELINE</span><h2 id="pipeline-dashboard-title">8단계 실행 상태</h2></div>
+                    <button class="lab-reset-button" id="reset-pipeline" type="button">Reset Pipeline</button>
+                  </div>
+                  <p class="lab-panel-description">이전 단계가 완료되면 다음 단계를 실행할 수 있습니다.</p>
+                  <ol class="lab-step-list" id="pipeline-steps" aria-label="의료 세미나 AI 파이프라인"></ol>
+                </section>
+
+                <aside class="lab-panel lab-detail-panel" aria-labelledby="pipeline-detail-title">
+                  <div class="lab-panel-heading">
+                    <div><span id="pipeline-detail-order">STEP 01</span><h2 id="pipeline-detail-title">INGEST</h2></div>
+                    <strong class="lab-status-badge is-waiting" id="pipeline-detail-status">waiting</strong>
+                  </div>
+                  <p class="lab-detail-description" id="pipeline-detail-description">단계를 선택하면 설명을 확인할 수 있습니다.</p>
+                  <div class="lab-io-grid">
+                    <section><h3>Input</h3><ul id="pipeline-detail-input"></ul></section>
+                    <section><h3>Expected Output</h3><ul id="pipeline-detail-output"></ul></section>
+                  </div>
+                  <div class="lab-json-heading"><h3>JSON Preview</h3><span id="pipeline-json-key">seminar</span></div>
+                  <pre class="lab-json-preview"><code id="pipeline-json-preview">데이터를 불러오는 중입니다.</code></pre>
+                </aside>
+              </div>
+
+              <section class="lab-panel lab-result-panel" aria-labelledby="transcript-result-title">
+                <div class="lab-panel-heading">
+                  <div><span>RESULT</span><h2 id="transcript-result-title">Transcript Result</h2></div>
+                  <small id="transcript-result-summary">전사 실행 전</small>
+                </div>
+                <div class="lab-result-tabs" role="tablist" aria-label="전사 결과 보기">
+                  <button type="button" role="tab" id="transcript-tab" data-lab-result-tab="transcript" aria-controls="transcript-panel" aria-selected="true">Transcript</button>
+                  <button type="button" role="tab" id="transcript-json-tab" data-lab-result-tab="json" aria-controls="transcript-json-panel" aria-selected="false">JSON</button>
+                </div>
+                <div class="lab-result-content" id="transcript-panel" role="tabpanel" aria-labelledby="transcript-tab">
+                  <p class="lab-result-empty" id="transcript-empty">TRANSCRIBE 단계를 실행하면 timestamp별 결과가 표시됩니다.</p>
+                  <ol class="lab-transcript-list" id="transcript-list"></ol>
+                </div>
+                <div class="lab-result-content" id="transcript-json-panel" role="tabpanel" aria-labelledby="transcript-json-tab" hidden>
+                  <pre class="lab-json-preview lab-result-json"><code id="transcript-json-preview">전사 결과가 없습니다.</code></pre>
+                </div>
+              </section>
+            </div>
+          </section>
         </article>
       </div>
 
       <footer class="spec-footer"><strong>닥터빌 주간 월간 ga데이터 자동 시트저장</strong><span>매주 월요일 · 매월 1일 자동 실행</span></footer>
     </main>
+    <script src="assets/js/router.js" defer></script>
+    <script src="assets/js/weekly-report.js" defer></script>
+    <script src="assets/js/seminar-lab.js" defer></script>
   </body>
 </html>

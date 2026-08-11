@@ -1,0 +1,208 @@
+{
+  "schemaVersion": "0.1.0",
+  "dataMode": "mock",
+  "disclaimer": "UI와 데이터 계약 검증을 위한 mock 데이터이며 실제 의료 정보나 진료 권고가 아닙니다.",
+  "seminar": {
+    "id": "YsFmWWHc6Yc",
+    "source": "youtube",
+    "sourceUrl": "https://www.youtube.com/watch?v=YsFmWWHc6Yc",
+    "title": "고혈압 진료지침 업데이트와 실제 임상 적용 (Mock Seminar)",
+    "speaker": "김닥터 (Mock)",
+    "specialty": "순환기내과",
+    "durationSeconds": 3725,
+    "language": "ko",
+    "seminarDate": "2025-11-15"
+  },
+  "pipeline": {
+    "runId": null,
+    "status": "waiting",
+    "currentStage": null,
+    "startedAt": null,
+    "completedAt": null,
+    "stages": {
+      "ingest": { "order": 1, "status": "waiting", "outputKey": "seminar", "startedAt": null, "completedAt": null, "error": null },
+      "transcribe": { "order": 2, "status": "waiting", "outputKey": "transcript", "startedAt": null, "completedAt": null, "error": null },
+      "slideExtract": { "order": 3, "status": "waiting", "outputKey": "slides", "startedAt": null, "completedAt": null, "error": null },
+      "align": { "order": 4, "status": "waiting", "outputKey": "timeline", "startedAt": null, "completedAt": null, "error": null },
+      "medicalFacts": { "order": 5, "status": "waiting", "outputKey": "medicalFacts", "startedAt": null, "completedAt": null, "error": null },
+      "importanceScore": { "order": 6, "status": "waiting", "outputKey": "scoredFacts", "startedAt": null, "completedAt": null, "error": null },
+      "clinicalBrief": { "order": 7, "status": "waiting", "outputKey": "clinicalBrief", "startedAt": null, "completedAt": null, "error": null },
+      "verify": { "order": 8, "status": "waiting", "outputKey": "verification", "startedAt": null, "completedAt": null, "error": null }
+    }
+  },
+  "transcript": [
+    {
+      "id": "tr_001",
+      "start": 0,
+      "end": 15,
+      "text": "오늘은 고혈압 진료지침의 주요 변화와 실제 진료 적용 과정을 살펴보겠습니다.",
+      "speaker": "lecturer"
+    },
+    {
+      "id": "tr_002",
+      "start": 15,
+      "end": 42,
+      "text": "치료 계획은 환자의 위험도와 동반질환을 함께 검토하는 과정이 중요합니다.",
+      "speaker": "lecturer"
+    },
+    {
+      "id": "tr_003",
+      "start": 42,
+      "end": 68,
+      "text": "여기에 표시되는 문장은 데이터 구조 검증을 위한 예시이며 실제 진료 권고가 아닙니다.",
+      "speaker": "lecturer"
+    }
+  ],
+  "slides": [
+    {
+      "id": "slide_001",
+      "start": 0,
+      "end": 34,
+      "image": null,
+      "title": "고혈압 진료지침 업데이트",
+      "text": ["위험도 평가", "동반질환 확인", "치료 계획 수립"],
+      "numbers": [],
+      "references": ["Mock Guideline Reference"]
+    },
+    {
+      "id": "slide_002",
+      "start": 34,
+      "end": 68,
+      "image": null,
+      "title": "임상 적용 체크리스트",
+      "text": ["환자 상태 확인", "치료 반응 추적", "근거 출처 기록"],
+      "numbers": [],
+      "references": []
+    }
+  ],
+  "timeline": [
+    {
+      "id": "align_001",
+      "start": 0,
+      "end": 34,
+      "transcriptIds": ["tr_001", "tr_002"],
+      "slideIds": ["slide_001"],
+      "confidence": 0.94
+    },
+    {
+      "id": "align_002",
+      "start": 34,
+      "end": 68,
+      "transcriptIds": ["tr_002", "tr_003"],
+      "slideIds": ["slide_002"],
+      "confidence": 0.91
+    }
+  ],
+  "medicalFacts": [
+    {
+      "id": "fact_001",
+      "type": "guideline_recommendation",
+      "topic": "치료 계획",
+      "claim": "치료 계획 수립 시 환자의 위험도와 동반질환을 함께 검토한다는 mock claim입니다.",
+      "patientCondition": "고혈압",
+      "drug": null,
+      "dose": null,
+      "duration": null,
+      "threshold": null,
+      "exception": null,
+      "evidence": "Mock Guideline Reference",
+      "source": {
+        "start": 15,
+        "end": 42,
+        "transcriptIds": ["tr_002"],
+        "slideIds": ["slide_001"]
+      }
+    },
+    {
+      "id": "fact_002",
+      "type": "threshold",
+      "topic": "치료 반응 추적",
+      "claim": "수치 기준이 포함되는 fact 구조를 확인하기 위한 mock claim입니다.",
+      "patientCondition": null,
+      "drug": null,
+      "dose": null,
+      "duration": null,
+      "threshold": { "value": null, "unit": null, "operator": null },
+      "exception": "실제 기준값은 backend 근거 검증 이후 입력합니다.",
+      "evidence": null,
+      "source": {
+        "start": 42,
+        "end": 68,
+        "transcriptIds": ["tr_003"],
+        "slideIds": ["slide_002"]
+      }
+    }
+  ],
+  "scoredFacts": [
+    {
+      "factId": "fact_001",
+      "clinicalImportance": 5,
+      "speakerEmphasis": 4,
+      "guidelineRelevance": 5,
+      "novelty": 3,
+      "actionability": 4,
+      "totalScore": 21
+    },
+    {
+      "factId": "fact_002",
+      "clinicalImportance": 2,
+      "speakerEmphasis": 2,
+      "guidelineRelevance": 1,
+      "novelty": 1,
+      "actionability": 1,
+      "totalScore": 7
+    }
+  ],
+  "clinicalBrief": {
+    "bottomLine": [
+      {
+        "id": "brief_bottom_001",
+        "text": "환자 위험도와 동반질환을 함께 검토하는 과정을 강조하는 mock 요약입니다.",
+        "source": { "start": 15, "end": 42, "transcriptIds": ["tr_002"], "slideIds": ["slide_001"] }
+      }
+    ],
+    "keyTakeaways": [
+      {
+        "id": "brief_takeaway_001",
+        "text": "생성 문장은 반드시 transcript와 slide 출처를 연결합니다.",
+        "source": { "start": 42, "end": 68, "transcriptIds": ["tr_003"], "slideIds": ["slide_002"] }
+      }
+    ],
+    "guidelineUpdates": [],
+    "diagnosis": [],
+    "treatment": [],
+    "drugAndDosage": [],
+    "thresholds": [],
+    "contraindications": [],
+    "clinicalCases": []
+  },
+  "verification": {
+    "status": "mock",
+    "claims": [
+      {
+        "claimId": "brief_bottom_001",
+        "status": "verified",
+        "supported": true,
+        "source": {
+          "start": 15,
+          "end": 42,
+          "transcriptIds": ["tr_002"],
+          "slideIds": ["slide_001"]
+        },
+        "issues": []
+      },
+      {
+        "claimId": "brief_takeaway_001",
+        "status": "needs_review",
+        "supported": null,
+        "source": {
+          "start": 42,
+          "end": 68,
+          "transcriptIds": ["tr_003"],
+          "slideIds": ["slide_002"]
+        },
+        "issues": ["Mock verification 결과이며 실제 근거 검증이 필요합니다."]
+      }
+    ]
+  }
+}
