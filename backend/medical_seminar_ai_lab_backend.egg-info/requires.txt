@@ -1,0 +1,9 @@
+fastapi<1,>=0.116
+openai<3,>=2.53
+pydantic-settings<3,>=2.10
+uvicorn[standard]<1,>=0.35
+yt-dlp[default]<2027,>=2026.7.4
+
+[dev]
+httpx<1,>=0.28
+pytest<9,>=8.4

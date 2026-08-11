@@ -1,0 +1,13 @@
+Metadata-Version: 2.4
+Name: medical-seminar-ai-lab-backend
+Version: 0.1.0
+Summary: FastAPI prototype for seminar ingest, audio preparation, and timestamp transcription
+Requires-Python: <3.13,>=3.12
+Requires-Dist: fastapi<1,>=0.116
+Requires-Dist: openai<3,>=2.53
+Requires-Dist: pydantic-settings<3,>=2.10
+Requires-Dist: uvicorn[standard]<1,>=0.35
+Requires-Dist: yt-dlp[default]<2027,>=2026.7.4
+Provides-Extra: dev
+Requires-Dist: httpx<1,>=0.28; extra == "dev"
+Requires-Dist: pytest<9,>=8.4; extra == "dev"
