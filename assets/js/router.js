@@ -1,6 +1,7 @@
 (() => {
-  const DEFAULT_ROUTE = "definition";
+  const DEFAULT_ROUTE = "home";
   const ROUTE_TITLES = {
+    home: "현민의 업무 페이지 | 닥터빌 GA4",
     definition: "닥터빌 GA4 정의서",
     "weekly-pages": "주간 페이지별 리포트 | 닥터빌 GA4",
     "ai-seminar-lab": "Medical Seminar AI Lab | 닥터빌",
@@ -10,6 +11,16 @@
   const routeViews = [...document.querySelectorAll("[data-view]")];
   const definitionNavigation = [...document.querySelectorAll("[data-definition-nav]")];
   const footer = document.querySelector(".spec-footer");
+  const homeDate = document.querySelector("#home-date");
+
+  function updateHomeDate() {
+    if (!homeDate) return;
+
+    const now = new Date();
+    const weekday = new Intl.DateTimeFormat("ko-KR", { weekday: "short" }).format(now);
+    homeDate.dateTime = [now.getFullYear(), String(now.getMonth() + 1).padStart(2, "0"), String(now.getDate()).padStart(2, "0")].join("-");
+    homeDate.textContent = `${now.getFullYear()}. ${String(now.getMonth() + 1).padStart(2, "0")}. ${String(now.getDate()).padStart(2, "0")} ${weekday}`;
+  }
 
   function parseRoute() {
     const value = window.location.hash.replace(/^#\/?/, "");
@@ -55,5 +66,6 @@
   }
 
   window.addEventListener("hashchange", updateRoute);
+  updateHomeDate();
   updateRoute();
 })();

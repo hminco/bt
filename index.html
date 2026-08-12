@@ -13,9 +13,55 @@
   </head>
   <body class="ga4-page">
     <main class="ga4-document">
+      <section class="route-view home-view" data-view="home" aria-labelledby="home-title">
+        <header class="home-topbar">
+          <a class="home-brand" href="#/home" aria-label="홈">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 12h4l2.2-7 4.1 14 2.2-7H21"/></svg>
+            <span>닥터빌 GA4</span>
+          </a>
+          <div class="home-profile">
+            <time id="home-date" datetime="2026-08-12">2026. 08. 12 수</time>
+            <span class="home-avatar" aria-label="현민">현</span>
+          </div>
+        </header>
+
+        <div class="home-stage">
+          <div class="home-heading">
+            <p class="home-eyebrow"><span aria-hidden="true">◆</span> MY WORKSPACE</p>
+            <h1 id="home-title">업무 페이지</h1>
+            <p>흩어진 데이터와 문서를 한 곳에서 엽니다.</p>
+          </div>
+
+          <nav class="home-menu" aria-label="업무 페이지 선택">
+            <a href="#/weekly-pages">
+              <span class="home-menu-number">02</span>
+              <strong>주간 페이지별 리포트</strong>
+              <span>페이지그룹별 조회수 · 비중 · 이탈률</span>
+              <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+            </a>
+            <a class="is-featured" href="#/definition">
+              <span class="home-menu-number">01</span>
+              <strong>GA4 정의서</strong>
+              <span>집계 기준 · 지표 정의 · 탭 구조 · 실행 함수</span>
+              <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
+            </a>
+            <a href="#/ai-seminar-lab">
+              <span class="home-menu-number">03</span>
+              <strong>의료 세미나 AI Lab</strong>
+              <span>세미나 콘텐츠 실험 공간</span>
+              <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+            </a>
+          </nav>
+
+          <a class="home-open-button" href="#/definition">열기
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
+          </a>
+        </div>
+      </section>
+
       <div class="spec-layout">
         <aside class="spec-toc" aria-label="화면 메뉴">
-          <a class="sidebar-brand" href="#/definition">닥터빌 <strong>GA4</strong></a>
+          <a class="sidebar-brand" href="#/home"><span aria-hidden="true">⌂</span> 홈</a>
           <p>메뉴</p>
           <nav class="route-nav" aria-label="주요 화면">
             <a href="#/definition" data-route-link="definition"><span>01</span>GA4 정의서</a>
